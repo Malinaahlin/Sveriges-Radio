@@ -6,8 +6,8 @@ G
 - [x] Konvertera till TypeScript
 - [x] Enhetlig kodkvalitet
 - [x] Mobilvyn
-- [ ] Språk
-- [ ] Rensa loggning
+- [x] Språk
+- [x] Rensa loggning
 - [ ] Dokumentation
 - [ ] Tillgänglighet (bilder)
 - [ ] Refaktorera funktioner
