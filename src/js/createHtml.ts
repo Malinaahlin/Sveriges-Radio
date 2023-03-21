@@ -3,11 +3,11 @@ import {getPodcasts} from './api'
 
 const podCastContainer = document.querySelector('.section__podlist-pods') as HTMLElement;
 
-let i: number = 0;
+let i = 0;
 
 export async function createHtml (){
     const podCasts = await getPodcasts ();
-    podCasts.programs.forEach((podcast) => {
+    podCasts.programs.forEach(() => {
     i++
     const innerArticle = createInnerArticle();
 

@@ -3,9 +3,9 @@ G
 - [x] Få projektet att funka
 - [x] CSS till Sass
 - [x] Enhetlig namngivning i CSS:en
-- [ ] Konvertera till TypeScript
-- [ ] Enhetlig kodkvalitet
-- [ ] Mobilvyn
+- [x] Konvertera till TypeScript
+- [x] Enhetlig kodkvalitet
+- [x] Mobilvyn
 - [ ] Språk
 - [ ] Rensa loggning
 - [ ] Dokumentation
