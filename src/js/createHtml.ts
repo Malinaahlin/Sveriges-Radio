@@ -1,9 +1,9 @@
 import {getPodcasts} from './api'
 
 
-const podCastContainer = document.querySelector('.section__podlist-pods');
+const podCastContainer = document.querySelector('.section__podlist-pods') as HTMLElement;
 
-let i = 0;
+let i: number = 0;
 
 export async function createHtml (){
     const podCasts = await getPodcasts ();
@@ -20,7 +20,7 @@ createImg();
     createLink();
 
     function createInnerArticle() {
-        const innerArticle = document.createElement('article');
+        const innerArticle = document.createElement('article') as HTMLElement;
         innerArticle.setAttribute('class', 'section__article-innerarticle');
             innerArticle.setAttribute('tabindex', '1')
             podCastContainer.appendChild(innerArticle);
@@ -28,14 +28,14 @@ createImg();
     }
 
     function createTextDiv() {
-        const textDiv = document.createElement('div');
+        const textDiv = document.createElement('div') as HTMLDivElement;
         textDiv.setAttribute('class', 'section__article-div');
         innerArticle.appendChild(textDiv);
         return textDiv;
     }
 
     function createLink (){
-        const linkPlacement = document.createElement('a');
+        const linkPlacement = document.createElement('a') as HTMLElement;
         const linkText = document.createTextNode('Lyssna här');
         linkPlacement.setAttribute('href', podCasts.programs[i].programurl);
         linkPlacement.setAttribute('tabindex', '1')
@@ -43,7 +43,7 @@ createImg();
         textDiv.appendChild(linkPlacement)
     }
     function createImg() {
-        const imgPlacement = document.createElement('IMG');
+        const imgPlacement = document.createElement('IMG') as HTMLImageElement;
         imgPlacement.setAttribute('src', podCasts.programs[i].socialimage);
         imgPlacement.setAttribute('width', '100');
         imgPlacement.setAttribute('height', '100')
@@ -51,14 +51,14 @@ createImg();
     }
 
     function createP() {
-    const descPlacement = document.createElement('p');
+    const descPlacement = document.createElement('p') as HTMLParagraphElement;
     const desc = document.createTextNode(podCasts.programs[i].description);
     descPlacement.appendChild(desc);
     textDiv.appendChild(descPlacement);
 }
 
 function createHeader() {
-    const headerPlacement = document.createElement('h2');
+    const headerPlacement = document.createElement('h2') as HTMLElement;
     const programName = document.createTextNode(podCasts.programs[i].name);
     headerPlacement.appendChild(programName);
     textDiv.appendChild(headerPlacement);
