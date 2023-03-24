@@ -1,5 +1,5 @@
 body {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
@@ -17,21 +17,21 @@ h1 {
   text-align: center;
 }
 
-.section{
+.section {
   &__article-innerarticle {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 2rem;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2rem;
     img {
       margin-top: 0.5rem;
-      }
+    }
   }
 
   &__article-div {
-  display: inline-flex;
-  flex-direction: column;
-  margin-top: 0;
-  margin-left: 1rem;
+    display: inline-flex;
+    flex-direction: column;
+    margin-top: 0;
+    margin-left: 1rem;
     h2 {
       font-size: 1.25rem;
       margin: 0;
@@ -44,7 +44,8 @@ h1 {
       color: rgba(255, 255, 255, 0.87);
       cursor: pointer;
     }
-    a:active, a:hover {
+    a:active,
+    a:hover {
       color: rgb(85, 85, 218);
     }
   }
@@ -56,7 +57,8 @@ h1 {
   & a {
     color: #242424;
   }
-  & a:active, a:hover {
+  & a:active,
+  a:hover {
     color: rgb(85, 85, 218);
   }
 }
