@@ -45,14 +45,14 @@ export async function createHtml() {
       const imgPlacement = document.createElement('IMG') as HTMLImageElement;
       const alt = [
         '',
-        'Rosa hjärna som sitter fast i en gaffel.',
-        'Tjej som skriker, hon har en hatt och klänning gjord av tidningspapper.',
-        'Kvinna och en man som skrattar och har många böcker framför sig.',
-        'Bild på två män som är glada, den ena har en blå tröja och den adra en svart tröja.',
-        'Två kvinnor som ser bekymrade ut. Den ena kvinnar håller i ett anteckningsblock. Den andra med en gammal telefon.',
-        'Tre dockor som pratar i mikrofoner.',
-        'Ett par som sitter på varsinn sida av soffan, och ser trötta ut.',
-        'Ung vuxen kille pratar i mikrofon. Det står en man och en kvinna bakom honom.',
+        'Omslagsbild för Tankesmedjans podcast.',
+        'Omslagsbild för Lantzkampens podcast.',
+        'Omslagsbild för Fredag i P1:s podcast.',
+        'Omslagsbild för Så funkar det podcast.',
+        'Omslagsbild för Utkantssveriges podcast.',
+        'Omslagsbild för Dockradio med Birgitta, Kjell, Gloria & Co:s podcast.',
+        'Omslagsbild för Skärvor av ett äktenskap:s podcast.',
+        'Omslagsbild för Bokbussen i P3:s podcast.',
       ];
       imgPlacement.setAttribute('src', podCasts.programs[i].socialimage);
       imgPlacement.setAttribute('alt', alt[i]);
