@@ -2,77 +2,52 @@ import { getPodcasts } from './api';
 
 const podCastContainer = document.querySelector('.section__podlist-pods') as HTMLElement;
 
-let i = 0;
-
 export async function createHtml() {
   const podCasts = await getPodcasts();
-  podCasts.programs.forEach(() => {
-    i++;
-    const innerArticle = createInnerArticle();
+  for (let i = 0; i < podCasts.programs.length; i++) {
 
-    createImg();
+    const getAllPodcasts = podCasts.programs[i];
+    const alt = [
+      'Omslagsbild för Mammas nya kille podcast.',
+      'Omslagsbild för Tankesmedjans podcast.',
+      'Omslagsbild för Lantzkampens podcast.',
+      'Omslagsbild för Fredag i P1:s podcast.',
+      'Omslagsbild för Så funkar det podcast.',
+      'Omslagsbild för Utkantssveriges podcast.',
+      'Omslagsbild för Dockradio med Birgitta, Kjell, Gloria & Co:s podcast.',
+      'Omslagsbild för Skärvor av ett äktenskap:s podcast.',
+      'Omslagsbild för Bokbussen i P3:s podcast.',
+    ];
 
-    const textDiv = createTextDiv();
+    const innerArticle = document.createElement('article') as HTMLElement;
+    innerArticle.className='section__article-innerarticle';
+    podCastContainer.appendChild(innerArticle);
 
-    createHeader();
-    createP();
-    createLink();
+    const podcastImg = document.createElement('IMG') as HTMLImageElement;
+    podcastImg.src = getAllPodcasts.socialimage;
+    podcastImg.alt = alt[i];
+    innerArticle.appendChild(podcastImg);
 
-    function createInnerArticle() {
-      const innerArticle = document.createElement('article') as HTMLElement;
-      innerArticle.setAttribute('class', 'section__article-innerarticle');
-      podCastContainer.appendChild(innerArticle);
-      return innerArticle;
-    }
+    const textDiv = document.createElement('div') as HTMLDivElement;
+    textDiv.className='section__article-div';
+    innerArticle.appendChild(textDiv);
 
-    function createTextDiv() {
-      const textDiv = document.createElement('div') as HTMLDivElement;
-      textDiv.setAttribute('class', 'section__article-div');
-      innerArticle.appendChild(textDiv);
-      return textDiv;
-    }
+    const podcastTitle = document.createElement('h2') as HTMLElement;
+    podcastTitle.innerText = getAllPodcasts.name;
+    textDiv.appendChild(podcastTitle);
 
-    function createLink() {
-      const linkPlacement = document.createElement('a') as HTMLElement;
-      const linkText = document.createTextNode('Lyssna här');
-      linkPlacement.setAttribute('href', podCasts.programs[i].programurl);
-      linkPlacement.appendChild(linkText);
-      textDiv.appendChild(linkPlacement);
-    }
-    function createImg() {
-      const imgPlacement = document.createElement('IMG') as HTMLImageElement;
-      const alt = [
-        '',
-        'Omslagsbild för Tankesmedjans podcast.',
-        'Omslagsbild för Lantzkampens podcast.',
-        'Omslagsbild för Fredag i P1:s podcast.',
-        'Omslagsbild för Så funkar det podcast.',
-        'Omslagsbild för Utkantssveriges podcast.',
-        'Omslagsbild för Dockradio med Birgitta, Kjell, Gloria & Co:s podcast.',
-        'Omslagsbild för Skärvor av ett äktenskap:s podcast.',
-        'Omslagsbild för Bokbussen i P3:s podcast.',
-      ];
-      imgPlacement.setAttribute('src', podCasts.programs[i].socialimage);
-      imgPlacement.setAttribute('alt', alt[i]);
-      imgPlacement.setAttribute('width', '100');
-      imgPlacement.setAttribute('height', '100');
-      innerArticle.appendChild(imgPlacement);
-    }
+    const podcastDesc = document.createElement('p') as HTMLParagraphElement;
+    podcastDesc.innerText = getAllPodcasts.description;
+    textDiv.appendChild(podcastDesc);
 
-    function createP() {
-      const descPlacement = document.createElement('p') as HTMLParagraphElement;
-      const desc = document.createTextNode(podCasts.programs[i].description);
-      descPlacement.appendChild(desc);
-      textDiv.appendChild(descPlacement);
-    }
+    const podcastLink = document.createElement('a') as HTMLAnchorElement;
+    podcastLink.innerText = 'Lyssna här';
+    podcastLink.href = getAllPodcasts.programurl;
+    textDiv.appendChild(podcastLink);
 
-    function createHeader() {
-      const headerPlacement = document.createElement('h2') as HTMLElement;
-      const programName = document.createTextNode(podCasts.programs[i].name);
-      headerPlacement.appendChild(programName);
-      textDiv.appendChild(headerPlacement);
-    }
-  });
+    document.body.appendChild(podCastContainer);
+  }
+
 }
 
 export default createHtml;

@@ -10,9 +10,9 @@ G
 - [x] Rensa loggning
 - [ ] Dokumentation
 - [x] Tillgänglighet (bilder)
-- [ ] Refaktorera funktioner
-- [ ] Eliminera onödig kod
-- [ ] Rensa bort kod som inte ska sättas
+- [x] Refaktorera funktioner
+- [x] Eliminera onödig kod
+- [x] Rensa bort kod som inte ska sättas
 
 VG
 
