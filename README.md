@@ -39,6 +39,14 @@ Det här är en webbsida för Sveriges Radio som presenterar dess humorprogram m
 
 ![SverigesRadio](./src/images/SverigesRadio.png)
 
+## Lighthouse-analys
+
+![image](/src/images/lighthouse-sr.png)
+
+## Tillgänglighets-analys
+
+![image](/src/images/Assessibility-sr.png)
+
 ## Använts i projektet
 
 - GitHub
