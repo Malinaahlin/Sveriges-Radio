@@ -53,7 +53,7 @@ Det här är en webbsida för Sveriges Radio som presenterar dess humorprogram m
 
 1.  Klona ned det här repot och öppna i ett utvecklingsverktyg.
 
-        git clone https://github.com/Medieinstitutet/inlamningsuppgift-1-Malinaahlin.git
+        git clone "https://github.com/Medieinstitutet/inlamningsuppgift-1-Malinaahlin.git"
 
 2.  Installera
 
