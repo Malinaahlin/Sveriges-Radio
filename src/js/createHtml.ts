@@ -5,6 +5,7 @@ const podCastContainer = document.querySelector('.section__podlist-pods') as HTM
 export async function createHtml() {
   const podCasts = await getPodcasts();
   for (let i = 0; i < podCasts.programs.length; i++) {
+
     const getAllPodcasts = podCasts.programs[i];
     const alt = [
       'Omslagsbild för Mammas nya kille podcast.',
@@ -19,7 +20,7 @@ export async function createHtml() {
     ];
 
     const innerArticle = document.createElement('article') as HTMLElement;
-    innerArticle.className = 'section__article-innerarticle';
+    innerArticle.className='section__article-innerarticle';
     podCastContainer.appendChild(innerArticle);
 
     const podcastImg = document.createElement('IMG') as HTMLImageElement;
@@ -28,7 +29,7 @@ export async function createHtml() {
     innerArticle.appendChild(podcastImg);
 
     const textDiv = document.createElement('div') as HTMLDivElement;
-    textDiv.className = 'section__article-div';
+    textDiv.className='section__article-div';
     innerArticle.appendChild(textDiv);
 
     const podcastTitle = document.createElement('h2') as HTMLElement;
@@ -46,6 +47,7 @@ export async function createHtml() {
 
     document.body.appendChild(podCastContainer);
   }
+
 }
 
 export default createHtml;
